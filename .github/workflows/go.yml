@@ -38,8 +38,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Checkout
+      uses: actions/checkout@v3 
+      
     - name: build image from dockerfile
-      run: docker build -t diesi/demo:latest ./
+      run: docker build -t diesi/demo:latest .
       
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
